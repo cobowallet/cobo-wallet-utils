@@ -45,3 +45,8 @@ const checkResult = (result, data) => {
   }
   return false
 };
+
+export default {
+  splitData,
+  assembleData
+}
