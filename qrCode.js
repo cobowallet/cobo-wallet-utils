@@ -18,8 +18,17 @@ export const splitData = (data, capacity) => {
   }));
 };
 
-
 export const assembleData = (data, result = []) => {
+  const dataObject = JSON.parse(data);
+  if (typeof find(propEq('index', dataObject.index))(result) === 'undefined') {
+    return [...result, dataObject];
+  }
+  return result
+}
+
+
+
+export const combineMutilQrCode = (data, result = []) => {
   const dataObject = JSON.parse(data);
   if(checkResult(result, dataObject)) {
     return result;

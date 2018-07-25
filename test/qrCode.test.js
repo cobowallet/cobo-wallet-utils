@@ -68,11 +68,10 @@ describe('qrCode', function() {
     it('should assemble the current data when the input data is more than required', function() {
       const dataOne = '{"total":2,"index":0,"checkSum":"25d55ad283aa400af464c76d713c07ad","value":"1234"}';
       const dataTwo = '{"total":2,"index":1,"checkSum":"25d55ad283aa400af464c76d713c07ad","value":"5678"}';
-      const dataThree = '{"total":2,"index":1,"checkSum":"25d55ad283aa400af464c76d713c07ad","value":"5678"}';
       let result = [];
       result = assembleData(dataOne, result);
       result = assembleData(dataTwo, result);
-      result = assembleData(dataThree, result);
+      result = assembleData(dataOne, result);
       const exceptedResult = [
         {
           total: 2,
@@ -90,14 +89,5 @@ describe('qrCode', function() {
       expect(result).toEqual(exceptedResult)
     });
 
-    it('should raise error if the checksum is not matched', function() {
-      const dataOne = '{"total":2,"index":0,"checkSum":"25d55ad283aa400af464c76d713c07vd","value":"1234"}'
-      const dataTwo = '{"total":2,"index":1,"checkSum":"25d55ad283aa400af464c76d713c07vd","value":"5678"}'
-      let result = [];
-      expect(() => {
-        result = assembleData(dataOne, result);
-        result = assembleData(dataTwo, result);
-      }).toThrow('data is not matched')
-    });
   });
 });
