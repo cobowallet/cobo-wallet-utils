@@ -24,38 +24,16 @@ export const assembleData = (data, result = []) => {
     return [...result, dataObject];
   }
   return result
-}
-
-
-
-export const combineMutilQrCode = (data, result = []) => {
-  const dataObject = JSON.parse(data);
-  if(checkResult(result, dataObject)) {
-    return result;
-  } else {
-    if (typeof find(propEq('index', dataObject.index))(result) === 'undefined') {
-      const next = [...result, dataObject];
-      if(checkResult(next, dataObject)){
-        return next
-      }
-      return next
-    }
-  }
 };
 
-const checkResult = (result, data) => {
-  if(result.length === data.total) {
-    const resultString = result.reduce((acc, current) => acc + current.value, '');
-    if(md5(resultString).toString() === data.checkSum) {
-      return true
-    } else {
-      throw Error('data is not matched')
-    }
-  }
-  return false
+export const verifyCheckSum = (data, checkSum) => {
+  return md5(data).toString() === checkSum;
 };
+
+
 
 export default {
   splitData,
-  assembleData
+  assembleData,
+  verifyCheckSum,
 }
