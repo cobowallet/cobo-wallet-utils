@@ -1,6 +1,6 @@
 {
   "name": "cobo-wallet-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "cobo wallet shared utils function",
   "main": "index.js",
   "repository": "git@github.com:cobowallet/cobo-wallet-utils.git",
