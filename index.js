@@ -1,6 +1,5 @@
-import qrCode from './qrCode'
-
+import qrCode from "./qrCode";
 
 export default {
   qrCode
-}
+};
