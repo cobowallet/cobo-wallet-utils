@@ -1,6 +1,4 @@
 import { splitData, assembleData, extractData } from "../qrCode";
-import zlib from "browserify-zlib";
-import { Buffer } from "safe-buffer";
 
 describe("qrCode", function() {
   describe("splitData", function() {
@@ -15,15 +13,69 @@ describe("qrCode", function() {
           total: 10,
           value: "H4sI"
         },
-        { index: 1, total: 10, value: "AAAA" },
-        { index: 2, total: 10, value: "AAAA" },
-        { index: 3, total: 10, value: "AzM0" },
-        { index: 4, total: 10, value: "MjYx" },
-        { index: 5, total: 10, value: "NTO3" },
-        { index: 6, total: 10, value: "AACv" },
-        { index: 7, total: 10, value: "2uCa" },
-        { index: 8, total: 10, value: "CAAA" },
-        { index: 9, total: 10, value: "AA==" }
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 1,
+          total: 10,
+          value: "AAAA"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 2,
+          total: 10,
+          value: "AAAA"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 3,
+          total: 10,
+          value: "AzM0"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 4,
+          total: 10,
+          value: "MjYx"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 5,
+          total: 10,
+          value: "NTO3"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 6,
+          total: 10,
+          value: "AACv"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 7,
+          total: 10,
+          value: "2uCa"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 8,
+          total: 10,
+          value: "CAAA"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 9,
+          total: 10,
+          value: "AA=="
+        }
       ];
       expect(dataList).toEqual(result);
     });
@@ -52,19 +104,97 @@ describe("qrCode", function() {
           total: 14,
           value: "H4s"
         },
-        { index: 1, total: 14, value: "IAA" },
-        { index: 2, total: 14, value: "AAA" },
-        { index: 3, total: 14, value: "AAA" },
-        { index: 4, total: 14, value: "A3u" },
-        { index: 5, total: 14, value: "2tf" },
-        { index: 6, total: 14, value: "vF+" },
-        { index: 7, total: 14, value: "qnP" },
-        { index: 8, total: 14, value: "cJM" },
-        { index: 9, total: 14, value: "A4k" },
-        { index: 10, total: 14, value: "Bsc" },
-        { index: 11, total: 14, value: "iEA" },
-        { index: 12, total: 14, value: "AAA" },
-        { index: 13, total: 14, value: "=" }
+        {
+          checkSum: "6f8c4a28dd7084fdf8336ff7b0ca95a0",
+          compress: true,
+          index: 1,
+          total: 14,
+          value: "IAA"
+        },
+        {
+          checkSum: "6f8c4a28dd7084fdf8336ff7b0ca95a0",
+          compress: true,
+          index: 2,
+          total: 14,
+          value: "AAA"
+        },
+        {
+          checkSum: "6f8c4a28dd7084fdf8336ff7b0ca95a0",
+          compress: true,
+          index: 3,
+          total: 14,
+          value: "AAA"
+        },
+        {
+          checkSum: "6f8c4a28dd7084fdf8336ff7b0ca95a0",
+          compress: true,
+          index: 4,
+          total: 14,
+          value: "A3u"
+        },
+        {
+          checkSum: "6f8c4a28dd7084fdf8336ff7b0ca95a0",
+          compress: true,
+          index: 5,
+          total: 14,
+          value: "2tf"
+        },
+        {
+          checkSum: "6f8c4a28dd7084fdf8336ff7b0ca95a0",
+          compress: true,
+          index: 6,
+          total: 14,
+          value: "vF+"
+        },
+        {
+          checkSum: "6f8c4a28dd7084fdf8336ff7b0ca95a0",
+          compress: true,
+          index: 7,
+          total: 14,
+          value: "qnP"
+        },
+        {
+          checkSum: "6f8c4a28dd7084fdf8336ff7b0ca95a0",
+          compress: true,
+          index: 8,
+          total: 14,
+          value: "cJM"
+        },
+        {
+          checkSum: "6f8c4a28dd7084fdf8336ff7b0ca95a0",
+          compress: true,
+          index: 9,
+          total: 14,
+          value: "A4k"
+        },
+        {
+          checkSum: "6f8c4a28dd7084fdf8336ff7b0ca95a0",
+          compress: true,
+          index: 10,
+          total: 14,
+          value: "Bsc"
+        },
+        {
+          checkSum: "6f8c4a28dd7084fdf8336ff7b0ca95a0",
+          compress: true,
+          index: 11,
+          total: 14,
+          value: "iEA"
+        },
+        {
+          checkSum: "6f8c4a28dd7084fdf8336ff7b0ca95a0",
+          compress: true,
+          index: 12,
+          total: 14,
+          value: "AAA"
+        },
+        {
+          checkSum: "6f8c4a28dd7084fdf8336ff7b0ca95a0",
+          compress: true,
+          index: 13,
+          total: 14,
+          value: "="
+        }
       ];
       expect(dataList).toEqual(result);
     });
@@ -78,21 +208,24 @@ describe("qrCode", function() {
     it("should assemble the data", function() {
       const dataOne =
         '{"total":2,"index":0,"checkSum":"25d55ad283aa400af464c76d713c07ad","value":"1234", "compress": true}';
-      const dataTwo = '{"total":2,"index":1,"value":"5678"}';
+      const dataTwo =
+        '{"total":2,"index":1,"value":"5678", "checkSum":"25d55ad283aa400af464c76d713c07ad", "compress": true}';
       let result = [];
       result = assembleData(dataOne, result);
       result = assembleData(dataTwo, result);
       const exceptedResult = [
         {
-          total: 2,
-          index: 0,
           checkSum: "25d55ad283aa400af464c76d713c07ad",
-          value: "1234",
-          compress: true
+          compress: true,
+          index: 0,
+          total: 2,
+          value: "1234"
         },
         {
-          total: 2,
+          checkSum: "25d55ad283aa400af464c76d713c07ad",
+          compress: true,
           index: 1,
+          total: 2,
           value: "5678"
         }
       ];
@@ -130,18 +263,143 @@ describe("qrCode", function() {
       const data = {};
       expect(() => extractData(data)).toThrow("input value is not supported");
     });
-    it("should throw Error when checkSum not match", function() {
+    it("should throw Error when received checkSums are not matched to each other", function() {
       const splitedData = [
-        { checkSum: "123", compress: true, index: 0, total: 10, value: "H4sI" },
-        { index: 1, total: 10, value: "AAAA" },
-        { index: 2, total: 10, value: "AAAA" },
-        { index: 3, total: 10, value: "AzM0" },
-        { index: 4, total: 10, value: "MjYx" },
-        { index: 5, total: 10, value: "NTO3" },
-        { index: 6, total: 10, value: "AACv" },
-        { index: 7, total: 10, value: "2uCa" },
-        { index: 8, total: 10, value: "CAAA" },
-        { index: 9, total: 10, value: "AA==" }
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 0,
+          total: 10,
+          value: "H4sI"
+        },
+        { checkSum: "123", compress: true, index: 1, total: 10, value: "AAAA" },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 2,
+          total: 10,
+          value: "AAAA"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 3,
+          total: 10,
+          value: "AzM0"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 4,
+          total: 10,
+          value: "MjYx"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 5,
+          total: 10,
+          value: "NTO3"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 6,
+          total: 10,
+          value: "AACv"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 7,
+          total: 10,
+          value: "2uCa"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 8,
+          total: 10,
+          value: "CAAA"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 9,
+          total: 10,
+          value: "AA=="
+        }
+      ];
+      expect(() => extractData(splitedData)).toThrow(
+        "checkSums are not equal for all QRCode"
+      );
+    });
+    it("should throw Error when received data's checkSum is not matched to the checkSum", function() {
+      const splitedData = [
+        {
+          checkSum: "1234",
+          compress: true,
+          index: 0,
+          total: 10,
+          value: "H4sI"
+        },
+        {
+          checkSum: "1234",
+          compress: true,
+          index: 1,
+          total: 10,
+          value: "AAAA"
+        },
+        {
+          checkSum: "1234",
+          compress: true,
+          index: 2,
+          total: 10,
+          value: "AAAA"
+        },
+        {
+          checkSum: "1234",
+          compress: true,
+          index: 3,
+          total: 10,
+          value: "AzM0"
+        },
+        {
+          checkSum: "1234",
+          compress: true,
+          index: 4,
+          total: 10,
+          value: "MjYx"
+        },
+        {
+          checkSum: "1234",
+          compress: true,
+          index: 5,
+          total: 10,
+          value: "NTO3"
+        },
+        {
+          checkSum: "1234",
+          compress: true,
+          index: 6,
+          total: 10,
+          value: "AACv"
+        },
+        {
+          checkSum: "1234",
+          compress: true,
+          index: 7,
+          total: 10,
+          value: "2uCa"
+        },
+        {
+          checkSum: "1234",
+          compress: true,
+          index: 8,
+          total: 10,
+          value: "CAAA"
+        },
+        { checkSum: "1234", compress: true, index: 9, total: 10, value: "AA==" }
       ];
       expect(() => extractData(splitedData)).toThrow("checkSum not valid");
     });
@@ -154,15 +412,69 @@ describe("qrCode", function() {
           total: 10,
           value: "H4sI"
         },
-        { index: 1, total: 10, value: "AAAA" },
-        { index: 2, total: 10, value: "AAAA" },
-        { index: 3, total: 10, value: "AzM0" },
-        { index: 4, total: 10, value: "MjYx" },
-        { index: 5, total: 10, value: "NTO3" },
-        { index: 6, total: 10, value: "AACv" },
-        { index: 7, total: 10, value: "2uCa" },
-        { index: 8, total: 10, value: "CAAA" },
-        { index: 9, total: 10, value: "AA==" }
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 1,
+          total: 10,
+          value: "AAAA"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 2,
+          total: 10,
+          value: "AAAA"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 3,
+          total: 10,
+          value: "AzM0"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 4,
+          total: 10,
+          value: "MjYx"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 5,
+          total: 10,
+          value: "NTO3"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 6,
+          total: 10,
+          value: "AACv"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 7,
+          total: 10,
+          value: "2uCa"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 8,
+          total: 10,
+          value: "CAAA"
+        },
+        {
+          checkSum: "070ad62969ef903b5d39a979e61d40a0",
+          compress: true,
+          index: 9,
+          total: 10,
+          value: "AA=="
+        }
       ];
       const result = extractData(splitedData);
       expect(result).toEqual("12345678");

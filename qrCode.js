@@ -25,19 +25,13 @@ export const splitData = (data, capacity, compress = true, rate) => {
     );
   }
   return parts.map((code, index) => {
-    return index === 0
-      ? {
-          total: partCount,
-          index,
-          checkSum,
-          value: code,
-          compress
-        }
-      : {
-          total: partCount,
-          index,
-          value: code
-        };
+    return {
+      total: partCount,
+      index,
+      checkSum,
+      value: code,
+      compress
+    };
   });
 };
 
@@ -61,6 +55,10 @@ export const extractData = data => {
     throw Error("input value is not supported");
   }
   const { compress, checkSum } = received[0];
+  received.forEach(element => {
+    if (element.checkSum !== checkSum)
+      throw Error("checkSums are not equal for all QRCode");
+  });
   const maybeCompressedData = received.reduce(
     (acc, current) => acc + current.value,
     ""
