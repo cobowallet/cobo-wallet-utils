@@ -8,10 +8,14 @@ export const splitData = (data, capacity) => {
     throw Error('input value is not supported')
   }
   const checkSum = md5(data).toString();
-  const dataList = data.match(new RegExp(regexString(capacity), 'g'));
-  const dataLength = dataList.length;
-  return dataList.map((code, index) => ({
-    total: dataLength,
+  const partCount = Math.ceil(data.length / capacity)
+  const partLength = Math.ceil(data.length / partCount)
+  const parts = []
+  for (let i = 0; i < partCount; i++) {
+    parts.push(data.substring(partLength * i, Math.min(partLength * i + partLength, data.length)))
+  }
+  return parts.map((code, index) => ({
+    total: partCount,
     index,
     checkSum,
     value: code,

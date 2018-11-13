@@ -19,7 +19,6 @@ describe('qrCode', function() {
           value: '5678',
         },
       ];
-
       expect(dataList).toEqual(result)
     });
     it('should split the Data into one parts', function() {
@@ -32,6 +31,68 @@ describe('qrCode', function() {
           checkSum:'25d55ad283aa400af464c76d713c07ad',
           value: '12345678',
         }
+      ];
+      expect(dataList).toEqual(result)
+    });
+    it('should split the Data into one parts', function() {
+      const data = '123456789ABCDEFGHIJKLMN';
+      const dataList = splitData(data, 7);
+      const result = [
+        {
+          total: 4,
+          index: 0,
+          checkSum:'2935a382342ac8f5b5f0d9a78cfdc2de',
+          value: '123456',
+        },
+        {
+          total: 4,
+          index: 1,
+          checkSum:'2935a382342ac8f5b5f0d9a78cfdc2de',
+          value: '789ABC',
+        },
+        {
+          total: 4,
+          index: 2,
+          checkSum:'2935a382342ac8f5b5f0d9a78cfdc2de',
+          value: 'DEFGHI',
+        },
+        {
+          total: 4,
+          index: 3,
+          checkSum:'2935a382342ac8f5b5f0d9a78cfdc2de',
+          value: 'JKLMN',
+        }
+      ];
+      expect(dataList).toEqual(result)
+    });
+    it('should split the Data into mutil parts', function() {
+      const data = '测试测试测试测试测试测';
+      const dataList = splitData(data, 3);
+      const result = [
+        {
+          total: 4,
+          index: 0,
+          checkSum:'a1000e23ef4dfecb16fd241e6e28d229',
+          value: '测试测',
+        },
+        {
+          total: 4,
+          index: 1,
+          checkSum:'a1000e23ef4dfecb16fd241e6e28d229',
+          value: '试测试',
+        },
+        {
+          total: 4,
+          index: 2,
+          checkSum:'a1000e23ef4dfecb16fd241e6e28d229',
+          value: '测试测',
+        },
+        {
+          total: 4,
+          index: 3,
+          checkSum:'a1000e23ef4dfecb16fd241e6e28d229',
+          value: '试测',
+        },
       ];
       expect(dataList).toEqual(result)
     });
