@@ -1,5 +1,3 @@
 import qrCode from './qrCode'
 
-export default {
-  qrCode
-}
+export { qrCode }
