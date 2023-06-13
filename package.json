@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {
     "browserify-zlib": "^0.2.0",
-    "crypto-js": "^3.1.9-1",
+    "crypto-js": "^3.2.1",
     "ramda": "^0.25.0",
     "safe-buffer": "^5.1.2"
   },
